@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(10, 14, 39, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 243, 255, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 243, 255, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-deep-dark text-white font-body overflow-x-hidden;
+}
+
+/* Custom utilities */
+@layer components {
+  .cyber-button {
+    @apply px-6 py-3 border-2 border-neon-cyan rounded-lg font-cyber uppercase tracking-wider text-sm transition-all duration-300 hover:shadow-neon-cyan hover:text-neon-cyan cursor-pointer;
+  }
+
+  .cyber-button-secondary {
+    @apply px-6 py-3 border-2 border-neon-magenta rounded-lg font-cyber uppercase tracking-wider text-sm transition-all duration-300 hover:shadow-neon-magenta hover:text-neon-magenta cursor-pointer;
+  }
+
+  .hud-card {
+    @apply bg-dark-panel/50 backdrop-blur-sm border border-neon-cyan/30 rounded-lg p-4 hover:border-neon-cyan/60 transition-all duration-300;
+  }
+
+  .glow-text {
+    @apply text-neon-cyan drop-shadow-lg;
+  }
+
+  .gradient-border {
+    @apply relative before:absolute before:inset-0 before:bg-gradient-to-r before:from-neon-cyan before:via-neon-purple before:to-neon-magenta before:rounded-lg before:-z-10;
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes float-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-scan-line {
+  animation: scan-line 3s linear infinite;
+}
+
+.animate-float-up {
+  animation: float-up 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out;
+}
