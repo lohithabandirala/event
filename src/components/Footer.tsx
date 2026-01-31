@@ -13,7 +13,6 @@ const Footer: React.FC = () => {
 
   const quickLinks = [
     { label: 'Events', url: '#events' },
-    { label: 'Registration', url: '#registration' },
     { label: 'Team', url: '#team' },
     { label: 'Contact', url: '#contact' },
   ]

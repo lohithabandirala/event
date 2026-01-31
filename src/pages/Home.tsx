@@ -4,10 +4,9 @@ import Roadmap from '../components/Roadmap'
 import DSAMasters from '../components/DSAMasters'
 import EthiTechMania from '../components/EthiTechMania'
 import Cipherville from '../components/Cipherville'
-import Registration from '../components/Registration'
 import Team from '../components/Team'
 import Footer from '../components/Footer'
-import Starfield from '../components/Starfield'
+import GridBackground from '../components/GridBackground'
 
 const Home: React.FC = () => {
   const roadmapRef = useRef<HTMLDivElement>(null)
@@ -18,7 +17,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="relative min-h-screen bg-deep-dark text-white overflow-hidden">
-      <Starfield particleCount={150} />
+      <GridBackground />
 
       {/* Main content */}
       <Hero onExplore={scrollToRoadmap} />
@@ -30,7 +29,6 @@ const Home: React.FC = () => {
       <DSAMasters />
       <EthiTechMania />
       <Cipherville />
-      <Registration />
       <Team />
       <Footer />
     </div>
